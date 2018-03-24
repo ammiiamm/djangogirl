@@ -54,3 +54,7 @@ h4 {
 .post h1 a:visited {
     color: #000000;
 }
+
+.post h1 a button {
+    color: #ffffff;
+}
