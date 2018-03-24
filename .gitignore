@@ -1,0 +1,5 @@
+/mysite/__pycache__/
+*.pyc
+/mysite/*.pyc
+/blog/__pycache__/
+/blog/*.pyc
