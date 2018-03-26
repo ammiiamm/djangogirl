@@ -18,7 +18,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()  #save to database
-            return redirect('post_detail.html', pk=post.pk)
+            return redirect('post_detail', pk=post.pk)
             #return redirect('post_list')
     #else:
         #clear form
@@ -38,7 +38,7 @@ def post_edit(request,pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()  #save to database
-            return redirect('post_detail.html', pk=post.pk)
+            return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
         
@@ -52,11 +52,10 @@ def post_delete(request,pk):
         print("if request condition")
         post.delete()  #delete from database
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-        #return redirect('/post_list.html')
         return render(request, 'post_list.html', {'posts':posts})
     else:
         print("else request condition")
-        #form = PostForm(instance=post)
+        form = PostForm(instance=post)
         #fheader = "ลบออก"
         post = get_object_or_404(Post, pk=pk) #if not found, return 404
 
