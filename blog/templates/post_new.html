@@ -1,6 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-<h1>New post</h1>
+<h1>{{ title }}</h1>
+<!-- <h1>New post</h1> -->
 <form method="POST" class="post-form">{% csrf_token %} {{ form.as_p }}
+    <div class="post">
+        {% if post.published_date %}
+        <div class="date">
+            {{ post.published_date }}
+        </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
     <button type="submit" class="save btn btn-default">Save</button>
 </form>
+
 {% endblock %}
