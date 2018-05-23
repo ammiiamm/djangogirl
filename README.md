@@ -43,4 +43,4 @@ Key Commands
 >>python manage.py createsuperuser
 
 Current Status:
-This code has already covered all functions in the tutorial. In between, I've already added "delete" function for extending more about django.
+This code has already covered all functions in the tutorial. In between, I've already added "delete" function for extending more feature.
